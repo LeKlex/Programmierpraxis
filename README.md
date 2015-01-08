@@ -5,7 +5,7 @@ Angaben laut TOSCA Stand WS2014: https://pp.caa.tuwien.ac.at/tosca
 ### Autor
 Ing. [Alexander Poschenreithner]
 
-Angaben und Testfälle wurden durch die [Fakultät für Informatik] der Technische Universität Wien bereit gestellt.
+Angaben und Testfälle wurden durch die [Fakultät für Informatik] der Technischen Universität Wien bereit gestellt.
 
 
 ### Abgeschlossene Übungsrunden
