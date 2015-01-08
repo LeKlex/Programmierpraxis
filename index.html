@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Programmierpraxis by LeKlex</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Programmierpraxis</h1>
+        <h2>Programmierpraxis (183.592) TU Wien</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/LeKlex/Programmierpraxis/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/LeKlex/Programmierpraxis/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/LeKlex/Programmierpraxis" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="programmierpraxis-183592" class="anchor" href="#programmierpraxis-183592" aria-hidden="true"><span class="octicon octicon-link"></span></a>Programmierpraxis (183.592)</h1>
+
+<p>Angaben laut TOSCA Stand WS2014: <a href="https://pp.caa.tuwien.ac.at/tosca">https://pp.caa.tuwien.ac.at/tosca</a></p>
+
+<h3>
+<a id="autor" class="anchor" href="#autor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Autor</h3>
+
+<p>Ing. <a href="mailto:e1328924@student.tuwien.ac.at">Alexander Poschenreithner</a></p>
+
+<h3>
+<a id="abgeschlossene-Übungsrunden" class="anchor" href="#abgeschlossene-%C3%9Cbungsrunden" aria-hidden="true"><span class="octicon octicon-link"></span></a>Abgeschlossene Übungsrunden</h3>
+
+<ul>
+<li>AsciiShop 1</li>
+<li>AsciiShop 2</li>
+<li>AsciiShop 3</li>
+<li>AsciiShop 4</li>
+<li>AsciiShop 5</li>
+<li>AsciiShop 6</li>
+<li>AsciiShop 7</li>
+<li>AsciiShop 8</li>
+<li>AsciiShop 9
+
+<ul>
+<li>Bonusaufgaben</li>
+</ul>
+</li>
+<li>AsciiShop 10</li>
+</ul>
+
+<h3>
+<a id="java-version" class="anchor" href="#java-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Java Version</h3>
+
+<p>1.5</p>
+
+<h3>
+<a id="tipps-für-die-entwicklung" class="anchor" href="#tipps-f%C3%BCr-die-entwicklung" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tipps für die Entwicklung</h3>
+
+<p>Bei Verwendung einer Java-Version &gt;1.5 sollte beim kompilieren folgender Befehl verwendet werden um die Kompatibilität mit der in TOSCA verwendeten Java-Version 1.5 sicher zu stellen:</p>
+
+<div class="highlight highlight-sh"><pre>$ javac -source 1.5 <span class="pl-k">*</span>.java</pre></div>
+
+<p>Zum Ausführen der Programme sollte man auf die TOSCA Einstellungen Rücksicht nehmen:</p>
+
+<div class="highlight highlight-sh"><pre>$ java -Duser.language=en -Duser.country=US AsciiShop</pre></div>
+
+<p>Zur Überprüfung der Ausgaben empfiehlt sich folgendes:</p>
+
+<div class="highlight highlight-sh"><pre>$ java -Duser.language=en -Duser.country=US AsciiShop <span class="pl-k">&lt;</span> <span class="pl-s3">test</span>-<span class="pl-k">case</span>.in &gt; output.txt
+$ diff -B -b -c -w test-case.out output.txt</pre></div>
+
+<p><a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?diff">DIFF</a> liefert eine gute und lesbare Übersicht der Abweichungen vom erwarteten Ergebnis.</p>
+
+<h3>
+<a id="todos" class="anchor" href="#todos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Todo's</h3>
+
+<ul>
+<li>Kommentare überarbeiten</li>
+<li>Noch ein paar Bonusaufgaben erledigen</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
