@@ -5,6 +5,8 @@ Angaben laut TOSCA Stand WS2014: https://pp.caa.tuwien.ac.at/tosca
 ### Autor
 Ing. [Alexander Poschenreithner]
 
+Angaben und Testfälle wurden durch die [Fakultät für Informatik] der Technische Universität Wien bereit gestellt.
+
 
 ### Abgeschlossene Übungsrunden
 
@@ -64,3 +66,4 @@ MIT
 
 [Alexander Poschenreithner]:mailto:e1328924@student.tuwien.ac.at
 [DIFF]:http://unixhelp.ed.ac.uk/CGI/man-cgi?diff
+[Fakultät für Informatik]:http://www.informatik.tuwien.ac.at/
