@@ -1,11 +1,15 @@
-//Aufgabe 4
-
 import java.util.Set;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * AsciiImage
+ *
+ * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 4
+ */
 public class AsciiImage {
 
     /**
@@ -33,9 +37,8 @@ public class AsciiImage {
 
     /**
      * Adds a line to the Image
-     *
-     * @param line String
-     * @return Boolean
+     * @param line to add
+     * @return if line was added
      */
     public boolean addLine(String line) {
         if (0 == width) {
@@ -52,8 +55,7 @@ public class AsciiImage {
 
     /**
      * Returns the image width
-     *
-     * @return Integer width of image
+     * @return width of image
      */
     public Integer getWidth() {
         return width;
@@ -61,8 +63,7 @@ public class AsciiImage {
 
     /**
      * Returns the image height
-     *
-     * @return Integer height of image
+     * @return height of image
      */
     public Integer getHeight() {
         return height;
@@ -70,8 +71,7 @@ public class AsciiImage {
 
     /**
      * Returns the actual Image (with NL at the end of each line!)
-     *
-     * @return String
+     * @return
      */
     @Override
     public String toString() {
@@ -85,8 +85,7 @@ public class AsciiImage {
 
     /**
      * Returns the count of unique chars
-     *
-     * @return Intger
+     * @return count of unique chars
      */
     public Integer getUniqueChars() {
         Set<Character> uChars = new HashSet<Character>();
@@ -135,7 +134,6 @@ public class AsciiImage {
     /**
      * Recursive method to replace neighbour pixels
      *
-     * @param image Image Array
      * @param x The X Coord.
      * @param y The Y Coord
      * @param c The Character
@@ -179,11 +177,10 @@ public class AsciiImage {
 
     /**
      * Check if the field on coords x,y should be replaced
-     *
      * @param x int
      * @param y int
      * @param c char
-     * @return boolean
+     * @return if is fillable
      */
     protected boolean isFillable(int x, int y, char c) {
         return (isBetween(x, 0, getWidth()) && isBetween(y, 0, getHeight()) && image.get(y).charAt(x) == c);
@@ -192,9 +189,9 @@ public class AsciiImage {
     /**
      * Check if a number is between low and high
      *
-     * @param number
-     * @param low
-     * @param high
+     * @param number to check
+     * @param low lower treshold
+     * @param high upper treshold
      * @return boolean
      */
     public boolean isBetween(int number, int low, int high) {

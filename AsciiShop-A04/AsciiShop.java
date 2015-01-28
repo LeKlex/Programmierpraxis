@@ -1,9 +1,16 @@
-//Aufgabe 4
-
 import java.util.Scanner;
 
+/**
+ * Main Class
+ *
+ * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 4
+ */
 public class AsciiShop {
 
+    /**
+     * Internal Image
+     */
     protected static AsciiImage img;
 
     public static void main(String[] args) {
@@ -81,7 +88,7 @@ public class AsciiShop {
      *
      * @param sc Scanner
      * @param readLines Integer
-     * @return Boolean
+     * @return if image has been successfully imported
      */
     protected static boolean importImage(Scanner sc, Integer readLines) {
         int cnt = 0;
