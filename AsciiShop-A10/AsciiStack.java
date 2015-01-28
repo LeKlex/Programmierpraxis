@@ -1,9 +1,10 @@
 /**
- * Class AsciiStack
+ * AsciiStack
  *
  * Represents a Stack within a Node class to handle multiple image versions
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class AsciiStack {
 
@@ -12,7 +13,11 @@ public class AsciiStack {
      */
     private AsciiStackNode head;
 
+    /**
+     * Constructor
+     */
     public AsciiStack() {
+        //Init head element with null
         this.head = null;
     }
 
@@ -56,12 +61,11 @@ public class AsciiStack {
 
     /**
      * Returns stack size
-     * @return
+     * @return Stack size
      */
     public int size() {
         return (empty()) ? 0 : head.size();
     }
-
 
     /**
      * Node Elements of Stack
@@ -78,6 +82,11 @@ public class AsciiStack {
          */
         private AsciiStackNode next = null;
 
+        /**
+         * Constructor
+         * @param image Image to store
+         * @param next Next node element
+         */
         public AsciiStackNode(AsciiImage image, AsciiStackNode next) {
             this.img = image;
             this.next = next;

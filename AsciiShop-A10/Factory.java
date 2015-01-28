@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 /**
+ * Factory for Operations
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public interface Factory {
 
         /**
-         * @param sc
+         * Creates new instances of Operations
+         * @param scanner
          * @return Operation
          * @throws FactoryException
          */

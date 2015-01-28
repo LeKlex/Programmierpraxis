@@ -1,7 +1,8 @@
 /**
- * Exception Class for AsciiShop
+ * Exception for Operations
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class OperationException extends Exception {
 

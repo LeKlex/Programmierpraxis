@@ -4,9 +4,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Mian class, handling the (User-) Input
+ * Main class, handling the (User-) Input
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class AsciiShop {
 
@@ -20,6 +21,9 @@ public class AsciiShop {
      */
     protected static AsciiStack imgStack;
 
+    /**
+     *
+     */
     protected static MetricSet<AsciiImage> imageStore;
 
     /**
@@ -38,8 +42,13 @@ public class AsciiShop {
     private static HashMap<String, Factory> cmds;
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in); //Init Scanner, read from System in
+        //Init Scanner, read from System in
+        Scanner sc = new Scanner(System.in);
+
+        //Init new Metric Set
         imageStore = new MetricSet<AsciiImage>();
+
+        //Init Menue
         buildMenue();
 
         try {
@@ -48,6 +57,7 @@ public class AsciiShop {
 
             //Create new Image
             create(sc);
+
             //Read Commands
             while (sc.hasNext()) {
                 String cmd = sc.next();
@@ -110,7 +120,6 @@ public class AsciiShop {
 
     /**
      * Build up HashMap with Factories for menue
-     * @param cmds
      */
     private static void buildMenue () {
         cmds = new HashMap<String, Factory>();
@@ -133,6 +142,7 @@ public class AsciiShop {
      */
     protected static void create(Scanner sc) throws InputMismatchException, OperationException {
 
+        //Check if we have a create statement
         if(!"create".equals(sc.next())) {
             throw new InputMismatchException("No create command found");
         }
@@ -140,10 +150,12 @@ public class AsciiShop {
         Integer sizeX = new Integer(sc.nextInt()); //.. with x pixels
         Integer sizeY = new Integer(sc.nextInt()); //.. with y pixels
 
+        //Check dimension
         if (sizeX <= 0 || sizeY <= 0) {
             throw new InputMismatchException("readline to lt 1"); //Line nr must be >= 1
         }
 
+        //If more arguments exists, create new image with them, otherwise something went wrong...
         if (sc.hasNext()) {
             img = new ClearOperation().execute(new AsciiImage(sizeX, sizeY, sc.next()));
         } else {

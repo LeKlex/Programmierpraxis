@@ -1,10 +1,14 @@
 /**
- * Clear Operation
+ * Operation Clear
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class ClearOperation implements Operation {
 
+    /**
+     * Constructor
+     */
     public ClearOperation() {}
 
     /**
@@ -18,8 +22,11 @@ public class ClearOperation implements Operation {
         AsciiImage ret = new AsciiImage(img);
         char brightest = ret.getBrightestPixelColor();
 
+        //Each row
         for(int i = 0; i < ret.getWidth(); i++) {
+            //Each Col
             for(int j = 0; j < ret.getHeight(); j++) {
+                //Set brightes pixel
                 ret.setPixel(i, j, brightest);
             }
         }

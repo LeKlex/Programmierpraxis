@@ -1,24 +1,35 @@
 import java.util.Scanner;
 
 /**
+ * Factory Filter
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class FilterFactory implements Factory {
 
+    /**
+     * Filter Size
+     */
     private int filterSize;
+
+    /**
+     * BlockGenerator
+     */
     private BlockGenerator bgen;
 
+
     public FilterFactory() {
+        //Set defaults
         filterSize = 3;
         bgen = new XBlockGenerator(filterSize);
     }
 
     /**
-     *
+     * Returns new instance of requested filter
      * @param scanner
-     * @return
-     * @throws FactoryException
+     * @return new instance of requested filter
+     * @throws FactoryException if insufficient params, wrong filtersize or unknown filter
      */
     @Override
     public Operation create(Scanner scanner) throws FactoryException {
@@ -49,10 +60,10 @@ public class FilterFactory implements Factory {
     /**
      * Chose filter by name and return instance
      *
-     * @param name
-     * @param bgen
-     * @return
-     * @throws FactoryException
+     * @param name Filtername
+     * @param bgen Wanted type of BlockGenerator
+     * @return new instance of Filter
+     * @throws FactoryException if unknown filter
      */
     private FilterOperation choseFilter(String name, BlockGenerator bgen) throws FactoryException {
         if ("median".equals(name)) {
@@ -66,10 +77,10 @@ public class FilterFactory implements Factory {
 
     /**
      * Chose BlockGenerator by name and return instance with size
-     * @param name
-     * @param size
-     * @return
-     * @throws FactoryException
+     * @param name BlockGenerator name
+     * @param size Filtersize
+     * @return new instance of BlockGenerator
+     * @throws FactoryException if unknown BlockGenerator
      */
     private BlockGenerator choseBlockGenerator(String name, int size) throws FactoryException {
         if ("x".equals(name)) {

@@ -1,9 +1,15 @@
 /**
+ * BlockGenerator Replicate
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class ReplicateBlockGenerator extends BlockGenerator {
 
+    /**
+     * Constructor
+     * @param squareSize
+     */
     public ReplicateBlockGenerator(int squareSize) {
         super(squareSize);
     }

@@ -1,11 +1,24 @@
 /**
+ * Operation Create
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class CreateOperation implements Operation {
 
+    /**
+     * X-Axis dimension
+     */
     final private int width;
+
+    /**
+     * Y-Axis dimension
+     */
     final private int height;
+
+    /**
+     * Allowed charset
+     */
     final private String charset;
 
     /**
@@ -26,9 +39,9 @@ public class CreateOperation implements Operation {
     }
 
     /**
-     *
+     * Create new AsciiImage with given params
      * @param img
-     * @return
+     * @return new AsciiImage
      * @throws OperationException
      */
     @Override

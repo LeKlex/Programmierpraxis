@@ -1,21 +1,23 @@
 import java.util.Scanner;
 
 /**
+ * Factory Binary
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class BinaryFactory implements Factory {
 
-
-    public BinaryFactory() {
-
-    }
+    /**
+     * Constructor
+     */
+    public BinaryFactory() {}
 
     /**
-     *
+     * Returns a new BinaryOperation Instance
      * @param scanner
-     * @return
-     * @throws FactoryException
+     * @return new BinaryOperation Instance
+     * @throws FactoryException if too few params
      */
     @Override
     public Operation create(Scanner scanner) throws FactoryException {

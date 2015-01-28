@@ -1,20 +1,20 @@
-
 import java.util.Scanner;
 
 /**
+ * Factory Create
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class CreateFactory implements Factory {
 
-    public CreateFactory() {
-    }
+    public CreateFactory() {}
 
     /**
-     *
+     * Creates new CreateOperation instance
      * @param scanner
-     * @return
-     * @throws FactoryException
+     * @return new CreateOperation instance
+     * @throws FactoryException if insufficient params
      */
     @Override
     public Operation create(Scanner scanner) throws FactoryException {

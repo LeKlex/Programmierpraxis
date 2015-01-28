@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.InputMismatchException;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Class Ascii Image (Unit AsciiShop 7)
- *
+ * Ascii Image
  * Class represents an ascii image.
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class AsciiImage {
 
@@ -25,10 +24,11 @@ public class AsciiImage {
 
     /**
      * Constructor
-     * @param width Integer
-     * @param height Integer
-     * @param charset String, allowed charset of image
-     *
+     * @param width Image width
+     * @param height Image height
+     * @param charset Allowed charset of image
+     * @throws InputMismatchException If invalid params are given
+     * @throws OperationException
      */
     public AsciiImage(Integer width, Integer height, String charset) throws InputMismatchException, OperationException {
         if (height < 1 || width < 1 || charset.isEmpty() || !hasUniqueChars(charset)) {
@@ -41,13 +41,11 @@ public class AsciiImage {
 
     /**
      * Copy Constructor
-     *
      * Needed to rewrite this method to avoid references for stack-usage
-     *
-     * @param img AsciiImage
+     * @param img Image to copy
      */
     public AsciiImage(AsciiImage img) {
-        this.charset = img.getCharset();
+        this.charset = img.getCharset(); //Use same Charset
         this.image = new char[img.getHeight()][];
         for(int idx = 0; idx < img.getHeight(); idx++) {
             this.image[idx] = img.image[idx].clone(); //Clone instead of = to avoid refs.
@@ -56,7 +54,7 @@ public class AsciiImage {
 
     /**
      * Calculates the HashCode (Sum of all ASCII values of all pixels)
-     * @return
+     * @return Calculated HashCode
      */
     @Override
     public int hashCode() {
@@ -72,6 +70,7 @@ public class AsciiImage {
 
         return hc;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -108,7 +107,7 @@ public class AsciiImage {
     /**
      * Returns the count of unique chars
      *
-     * @return Intger
+     * @return Count of unique chars
      */
     public int getUniqueChars() {
         Set<Character> uChars = new HashSet<Character>();
@@ -142,7 +141,7 @@ public class AsciiImage {
 
     /**
      * Returns the brightest pixel color
-     * @return
+     * @return Brightes Pixel-Char
      */
     public char getBrightestPixelColor() {
         //Brightest pixel color is the last one in charset string
@@ -151,7 +150,7 @@ public class AsciiImage {
 
     /**
      * Returns the darkest pixel color
-     * @return
+     * @return Darkest Pixel-char
      */
     public char getDarkestPixelColor() {
         return getCharset().charAt(0);
@@ -159,7 +158,7 @@ public class AsciiImage {
 
     /**
      * Returns the allowed charset
-     * @return
+     * @return Full charset of Image
      */
     public String getCharset() {
         return charset;
@@ -183,9 +182,10 @@ public class AsciiImage {
 
     /**
      * Returns a single char-Pixel
-     * @param x Integer
-     * @param y Integer
-     * @return char
+     * @param x X-Axis Position
+     * @param y Y-Axis position
+     * @return Pixel at XY Position
+     * @throws IndexOutOfBoundsException For coordinates out of range
      */
     public char getPixel(Integer x, Integer y) throws IndexOutOfBoundsException {
         if( !isPixelInDimension(x, y) ) {
@@ -198,7 +198,8 @@ public class AsciiImage {
      * Returns a single char-Pixel
      * Wrapper for getPixel(Integer, Integer)
      * @param p AsciiPoint
-     * @return char
+     * @return Pixel at position
+     * @throws IndexOutOfBoundsException For coordinates out of range
      */
     public char getPixel(AsciiPoint p) throws IndexOutOfBoundsException {
         return getPixel(p.getX(), p.getY());
@@ -206,15 +207,12 @@ public class AsciiImage {
 
     /**
      * Set/Replace a single char-Pixel
-     * @param x Integer
-     * @param y Integer
-     * @param c char
+     * @param x X-Axis coordinate
+     * @param y Y-Axis coordinate
+     * @param c Pixel to set at positon
+     * @throws IndexOutOfBoundsException For coordinates out of range
      */
-    public void setPixel(Integer x, Integer y, char c) {
-        /*System.out.println(isPixelInDimension(x, y));
-        System.out.println(isCharValid(c));
-        System.out.println(x + " " + y);*/
-
+    public void setPixel(Integer x, Integer y, char c) throws IndexOutOfBoundsException{
         if( !isPixelInDimension(x, y) || !isCharValid(c)) {
             throw new IndexOutOfBoundsException();
         }
@@ -252,7 +250,7 @@ public class AsciiImage {
 
     /**
      * Returns the actual Image (with NL at the end of each line!)
-     * @return String
+     * @return
      */
     @Override
     public String toString() {
@@ -264,7 +262,7 @@ public class AsciiImage {
 
     /**
      * Returns a list of AsciiPoints which equals c in image
-     * @param c char Character to search for
+     * @param c Character to search for
      * @return ArrayList of AsciiPoint
      */
     public ArrayList<AsciiPoint> getPointList(char c) {

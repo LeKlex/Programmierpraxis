@@ -2,24 +2,32 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 
 /**
+ *Metric Set
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
  * @param <E>
+ * @version AsciiShop 10
  */
 public class MetricSet<E> extends LinkedHashSet<E> {
 
-    public MetricSet() {
-    }
+    /**
+     * Constructor
+     */
+    public MetricSet() {}
 
+    /**
+     * Constructor
+     * @param c
+     */
     public MetricSet(Collection<? extends E> c) {
         super(c);
     }
 
     /**
-     *
+     * Search
      * @param e
      * @param m Metric to be used for distance calculation
-     * @return
+     * @return new instance of MetricSet with result
      */
     public MetricSet<E> search(E e, Metric<? super E> m) {
         MetricSet<E> retMet = new MetricSet<E>();

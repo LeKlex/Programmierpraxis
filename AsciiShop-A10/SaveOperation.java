@@ -1,13 +1,15 @@
 /**
+ * Operation Save
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class SaveOperation implements Operation {
 
     final private MetricSet<AsciiImage> saved;
 
     /**
-     *
+     * Constructor
      * @param saved
      */
     public SaveOperation(MetricSet<AsciiImage> saved) {
@@ -15,7 +17,7 @@ public class SaveOperation implements Operation {
     }
 
     /**
-     *
+     * Save Image in MetricSet
      * @param img
      * @return
      * @throws OperationException
@@ -28,7 +30,7 @@ public class SaveOperation implements Operation {
     }
 
     /**
-     *
+     * Returns saved 
      * @return
      */
     public MetricSet<AsciiImage> getSaves() {

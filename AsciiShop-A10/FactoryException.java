@@ -1,6 +1,8 @@
 /**
+ * Class for Factory Exceptions
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version 10
  */
 class FactoryException extends Exception {
 

@@ -1,9 +1,15 @@
 /**
+ * BlockGenerator Symmetric
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class SymmetricBlockGenerator extends BlockGenerator {
 
+    /**
+     * Constructor
+     * @param squareSize
+     */
     public SymmetricBlockGenerator(int squareSize) {
         super(squareSize);
     }

@@ -1,6 +1,8 @@
 /**
+ * Block Generator Circular
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class CircularBlockGenerator extends BlockGenerator {
 

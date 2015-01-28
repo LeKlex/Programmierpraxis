@@ -1,10 +1,11 @@
 /**
- * Class Ascii Point 
+ * Ascii Point
  *
  * Represents a single Point
  * Coordinates X and Y can only be set on init (immutable)!
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class AsciiPoint {
 
@@ -20,8 +21,8 @@ public class AsciiPoint {
 
     /**
      * Init a new Point with its coords
-     * @param x int
-     * @param y int
+     * @param x X-Axis coordinate
+     * @param y Y-Axis coordinate
      */
     public AsciiPoint(int x, int y) {
         this.x = x;
@@ -30,7 +31,7 @@ public class AsciiPoint {
 
     /**
      * Returns x Coord
-     * @return int x
+     * @return X-Axis Coordinate
      */
     public int getX() {
         return x;
@@ -38,7 +39,7 @@ public class AsciiPoint {
 
     /**
      * Returns y Coord
-     * @return int
+     * @return Y-Axis Coordinate
      */
     public int getY() {
         return y;
@@ -47,7 +48,7 @@ public class AsciiPoint {
     /**
      * Returns x and y coords in format (x,y) as string
      * Overrides std. toString
-     * @return String
+     * @return Coordinate as String "(x, y)"
      */
     @Override
     public String toString() {

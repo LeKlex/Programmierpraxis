@@ -1,6 +1,8 @@
 /**
+ * Operation Average
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class AverageOperation extends FilterOperation {
 
@@ -17,10 +19,9 @@ public class AverageOperation extends FilterOperation {
     public int filter(int[] values) {
         double sum = 0.0;
 
-        for (int val : values) {
-            sum += val;
-        }
-
+        //Sum up
+        for (int val : values) sum += val;
+        //Average as int
         return (int) Math.round(sum / values.length);
     }
 }

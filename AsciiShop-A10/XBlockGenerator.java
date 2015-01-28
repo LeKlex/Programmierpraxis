@@ -1,9 +1,15 @@
 /**
+ * BlockGenerator X
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class XBlockGenerator extends BlockGenerator {
 
+    /**
+     * Constructor
+     * @param squareSize
+     */
     public XBlockGenerator(int squareSize) {
         super(squareSize);
     }

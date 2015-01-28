@@ -1,6 +1,8 @@
 /**
+ * Abstract Generator Block
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public abstract class BlockGenerator {
 
@@ -11,7 +13,7 @@ public abstract class BlockGenerator {
 
     /**
      * Define the square size of block (3 => square of 3x3)
-     * @param squareSize
+     * @param squareSize length of square edge
      */
     public BlockGenerator(int squareSize) {
         this.squareSize = squareSize;
@@ -20,18 +22,18 @@ public abstract class BlockGenerator {
     /**
      * Return pixel
      * Handles behaviour if pixel out of region aso.
-     * @param img
-     * @param x
-     * @param y
+     * @param img Image to reade from
+     * @param x X-Axis position
+     * @param y Y-Axis position
      * @return
      */
     public abstract int getPixel(AsciiImage img, int x, int y);
 
     /**
-     *
+     * Calculates block by squaresize
      * @param img
-     * @param x
-     * @param y
+     * @param x X-Axis position
+     * @param y Y-Axis position
      * @return
      */
     public int[] getBlock(AsciiImage img, int x, int y) {

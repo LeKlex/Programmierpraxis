@@ -1,19 +1,20 @@
 import java.util.Scanner;
 
 /**
+ * Factory Load
  *
  * @author Alexander Poschenreithner <alexander.poschenreithner@gmail.com>
+ * @version AsciiShop 10
  */
 public class LoadFactory implements Factory{
 
-    public LoadFactory() {
-    }
+    public LoadFactory() {}
 
     /**
-     * 
+     * Returns new instance of LoadOperation
      * @param scanner
-     * @return
-     * @throws FactoryException
+     * @return new instance of LoadOperation
+     * @throws FactoryException if no EOF was found
      */
     @Override
     public Operation create(Scanner scanner) throws FactoryException {
@@ -29,6 +30,8 @@ public class LoadFactory implements Factory{
 
         while (scanner.hasNextLine()) {
             tmpLine = scanner.nextLine();
+
+            //If Line is EOF end loop
             if (tmpLine.contains(end)) {
                 break;
             } else {
