@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if [ "$#" -lt "1" ]; then
+  echo "usage $0 <NameOfClassWithMain>"
+  exit 0
+fi
+args=$@
+
+function clean_eol {
+  # Mac:  \r    \x0d
+  # Win:  \r\n  \x0d \x0a
+  # *ix:  \n    \x0a
+  # replace platform-specific EOL with \n
+
+  # replace \n with dummy (\2)
+  # s.t. sed can easily match over line boundaries.
+  # after sed'ing, replace dummy with original \n
+  tr '\012' '\002' \
+  | sed 's/\r\x2/\n/g' \
+  | sed 's/\r/\n/g' \
+  | sed 's/\x2/\n/g'
+}
+
+padstring="                                                  "
+
+for ifile in `ls *.i* | sort`; do
+  ofile=${ifile//\.i/\.o}
+
+  testname="java $args < $ifile"
+  printf '%s%*.*s' "$testname" 0 $((${#padstring} - ${#testname})) "$padstring"
+
+  java -Duser.language=en -Duser.country=US $args < $ifile | clean_eol > .tmp.mine
+  cat $ofile | clean_eol > .tmp.orig
+
+  if diff .tmp.orig .tmp.mine &> /dev/null; then
+    echo "ok"
+  else
+    echo "FAIL"
+    echo "output is:"
+    cat .tmp.mine
+    echo ""
+    echo "output should be:"
+    cat .tmp.orig
+    echo ""
+    exit 0
+  fi
+done
+
+rm -f .tmp.orig .tmp.mine
